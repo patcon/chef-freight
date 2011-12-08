@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: freight
-# Recipe:: default
+# Recipe:: attributes
 # 
 # Author:: Patrick Connolly <patrick@myplanetdigital.com>
 #
@@ -19,18 +19,9 @@
 # limitations under the License.
 #
 
-apt_repository "rcrowley" do
-  uri "http://packages.rcrowley.org"
-  distribution node['lsb']['codename']
-  components [ "main" ]
-  key "http://packages.rcrowley.org/keyring.gpg"
-  action :add
-end
-
-require_recipe 'gpg'
-
-package "freight"
-
-template "/etc/freight.conf" do
-  source "freight.conf.erb"
-end
+default['freight']['varlib']    = '/var/lib/freight'
+default['freight']['varcache']  = '/var/cache/freight'
+default['freight']['archs']     = [ 'i386', 'amd64' ]
+default['freight']['origin']    = 'Freight'
+default['freight']['label']     = 'Freight'
+default['freight']['gpg']       = 'example@example.com'
