@@ -33,4 +33,7 @@ package "freight"
 
 template "/etc/freight.conf" do
   source "freight.conf.erb"
+  owner "root"
+  group "root"
+  mode "0644"
 end
