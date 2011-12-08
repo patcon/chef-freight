@@ -73,6 +73,10 @@ Known Issues
 
  * Unsure why at the moment, but it seems that the `gpg` cookbook always fails on the first chef run while running apt-get. The next chef run goes smoothly. Need to investidate cause.
 
+Contributing
+============
+
+If you feel like chipping in and have Vagrant installed, feel free to clone my vagrant development setup, [freight-cooking](http://github.com/patcon/freight-cooking). Just install the [`librarian` gem](http://github.com/applicationsonline/librarian) and run `librarian-chef install`, then `vagrant up` to get running.
 
 ## Soundtrack
 
