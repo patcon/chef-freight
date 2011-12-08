@@ -41,8 +41,35 @@ Templates
 `freight.conf`
 The default configuration file.
 
+Resources (TO DO)
+=================
+
+`freight_manage`
+
+## Resource Attributes
+
+`package` (Required)
+
+`manager` (Required)
+
+`distro` (Required)
+
+## Available Actions
+
+`add` (Default action)
+
+`remove`
+
+## Example
+
 Usage
 =====
+
+Known Issues
+============
+
+ * Unsure why at the moment, but it seems that the `gpg` cookbook always fails on the first chef run while running apt-get. The next chef run goes smoothly. Need to investidate cause.
+
 
 ## Soundtrack
 
