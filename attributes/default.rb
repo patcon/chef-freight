@@ -19,9 +19,11 @@
 # limitations under the License.
 #
 
-default['freight']['varlib']    = '/var/lib/freight'
-default['freight']['varcache']  = '/var/cache/freight'
-default['freight']['archs']     = [ 'i386', 'amd64' ]
-default['freight']['origin']    = 'Freight'
+default['freight']['server_name'] = 'freight.localdomain'
+
+default['freight']['varlib']      = '/var/lib/freight'
+default['freight']['varcache']    = '/var/cache/freight'
+default['freight']['archs']       = [ 'i386', 'amd64' ]
+default['freight']['origin']      = 'Freight'
 default['freight']['label']     = 'Freight'
 default['freight']['gpg']       = 'example@example.com'

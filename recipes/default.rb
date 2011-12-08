@@ -37,3 +37,28 @@ template "/etc/freight.conf" do
   group "root"
   mode "0644"
 end
+
+[
+  node['freight']['varlib'],
+  node['freight']['varcache']
+].each do |dir|
+  directory dir do
+    owner "nobody"
+    group "nogroup"
+    mode "0755"
+  end
+end
+
+require_recipe "apache2"
+
+web_app node['freight']['server_name'] do
+  template "apt_repo.conf.erb"
+  server_name node['freight']['server_name']
+  server_aliases "*.#{node['freight']['server_name']}"
+  docroot node['freight']['varcache']
+end
+
+bash "Running freight-cache" do
+  user "root"
+  code "freight cache"
+end

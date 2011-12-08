@@ -38,8 +38,11 @@ The GPG key to use. Typically an email address. (Default: `example@example.com`)
 Templates
 =========
 
-`freight.conf`
+`freight.conf.erb`
 The default configuration file.
+
+`apt_repo.conf.erb`
+Apache Virtualhost container configuration for the repository.
 
 Resources (TO DO)
 =================

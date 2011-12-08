@@ -8,7 +8,7 @@
 VARLIB="<%= node['freight']['varlib'] %>"
 VARCACHE="<%= node['freight']['varcache'] %>"
 
-ARCHS="<%= node['freight']['archs'].to_a.join(',') %>"
+ARCHS="<%= node['freight']['archs'].to_a.join(' ') %>"
 
 # Default `Origin` and `Label` fields for `Release` files.
 ORIGIN="<%= node['freight']['origin'] %>"

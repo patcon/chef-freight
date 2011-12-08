@@ -1,0 +1,23 @@
+<VirtualHost *:80>
+  ServerAdmin <%= node['freight']['gpg'] %>
+  ServerName <%= @params[:server_name] %>
+  ServerAlias <%= @params[:server_aliases] %>
+
+  DocumentRoot <%= @params[:docroot] %>
+  <Directory />
+    Options FollowSymLinks
+    AllowOverride None
+  </Directory>
+
+  <Directory <%= @params[:docroot] %>>
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride None
+    Order allow,deny
+    allow from all
+  </Directory>
+
+  LogLevel warn
+  ErrorLog /var/log/apache2/apt_repo-error.log 
+  CustomLog /var/log/apache2/apt_repo-access.log combined
+  ServerSignature On
+</VirtualHost>
